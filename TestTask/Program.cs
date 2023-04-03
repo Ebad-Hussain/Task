@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using TestTask.Application.Services;
 using TestTask.Core.Interfaces;
 using TestTask.Infrastructure.Context;
+using TestTask.MiddleWares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.MapControllers();
 

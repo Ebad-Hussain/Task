@@ -18,8 +18,11 @@ namespace TestTask.Controllers
         [HttpGet("get-task", Name = "GetTaskInformation")]
         public async Task<ActionResult> GetTaskInformation([FromQuery][Required] long employeeId, [FromQuery][Required] DateTime fromDate, [FromQuery][Required] DateTime toDate)
         {
-            var result = await _taskService.GetTaskInformation(employeeId, fromDate, toDate);
-            return Ok(result);
+            var tasks = await _taskService.GetTaskInformation(employeeId, fromDate, toDate);
+            if (tasks.Count > 0)
+                return Ok(tasks);
+            else
+                return NotFound("No data found");
         }
     }
 }
