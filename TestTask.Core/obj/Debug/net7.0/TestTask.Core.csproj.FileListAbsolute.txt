@@ -1,0 +1,12 @@
+C:\Users\Hp\source\repos\TestTask\TestTask.Core\obj\Debug\net7.0\TestTask.Core.csproj.AssemblyReference.cache
+C:\Users\Hp\source\repos\TestTask\TestTask.Core\obj\Debug\net7.0\TestTask.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hp\source\repos\TestTask\TestTask.Core\obj\Debug\net7.0\TestTask.Core.AssemblyInfoInputs.cache
+C:\Users\Hp\source\repos\TestTask\TestTask.Core\obj\Debug\net7.0\TestTask.Core.AssemblyInfo.cs
+C:\Users\Hp\source\repos\TestTask\TestTask.Core\obj\Debug\net7.0\TestTask.Core.csproj.CoreCompileInputs.cache
+C:\Users\Hp\source\repos\TestTask\TestTask.Core\bin\Debug\net7.0\TestTask.Core.deps.json
+C:\Users\Hp\source\repos\TestTask\TestTask.Core\bin\Debug\net7.0\TestTask.Core.dll
+C:\Users\Hp\source\repos\TestTask\TestTask.Core\bin\Debug\net7.0\TestTask.Core.pdb
+C:\Users\Hp\source\repos\TestTask\TestTask.Core\obj\Debug\net7.0\TestTask.Core.dll
+C:\Users\Hp\source\repos\TestTask\TestTask.Core\obj\Debug\net7.0\refint\TestTask.Core.dll
+C:\Users\Hp\source\repos\TestTask\TestTask.Core\obj\Debug\net7.0\TestTask.Core.pdb
+C:\Users\Hp\source\repos\TestTask\TestTask.Core\obj\Debug\net7.0\ref\TestTask.Core.dll
