@@ -15,25 +15,27 @@ namespace TestTask.Application.Services
         }
         public async System.Threading.Tasks.Task<List<TaskReturableDto>> GetTaskInformation(long employeeId, DateTime fromDate, DateTime toDate)
         {
-            List<TaskReturableDto> taskList = new ();
-            var result = await _dbContext.Tasks
-                .Select(t => new {
-                    t.Description,
-                    t.EstimatedHours,
-                    HoursSpent = _dbContext.TimeEntries
-                    .Where(te => te.EmployeeId == employeeId && te.TaskId == t.TaskId && te.Date >= fromDate && te.Date <= toDate)
-                    .Select(te => te.HoursSpent).FirstOrDefault()
-                }).AsNoTracking().ToListAsync();
-            foreach(var task in result)
+            List<TaskReturableDto> tasksList = new ();
+
+            var tasks = await _dbContext.TimeEntries
+                .Where(te => te.EmployeeId == employeeId && te.Date >= fromDate && te.Date <= toDate)
+                .GroupBy(te => te.TaskId).Select(g => new {
+                    Description = g.FirstOrDefault().Task.Description,
+                    EstimatedHours = g.FirstOrDefault().Task.EstimatedHours,
+                    HoursSpent = g.FirstOrDefault().HoursSpent
+                })
+                .AsNoTracking().ToListAsync();
+
+            foreach (var task in tasks)
             {
-                taskList.Add(new TaskReturableDto
+                tasksList.Add(new TaskReturableDto
                 {
                     Description = task.Description,
                     EstimatedHours = task.EstimatedHours,
                     HoursSpent = task.HoursSpent
                 });
             }
-            return taskList;
+            return tasksList;
         }
     }
 }
