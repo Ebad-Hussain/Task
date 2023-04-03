@@ -23,7 +23,7 @@ namespace TestTask.Application.Services
                     HoursSpent = _dbContext.TimeEntries
                     .Where(te => te.EmployeeId == employeeId && te.TaskId == t.TaskId && te.Date >= fromDate && te.Date <= toDate)
                     .Select(te => te.HoursSpent).FirstOrDefault()
-                }).ToListAsync();
+                }).AsNoTracking().ToListAsync();
             foreach(var task in result)
             {
                 taskList.Add(new TaskReturableDto
